@@ -7,14 +7,23 @@ import { getRecentPosts, getSimilarPosts } from "../services";
 const PostWidget = ({ categories, slug }) => {
   const [relatedPosts, setRelatedPosts] = useState([]);
   useEffect(() => {
+    let sortedPosts;
     if (slug) {
-      getSimilarPosts(categories, slug).then((result) =>
-        setRelatedPosts(result)
-      );
+      getSimilarPosts(categories, slug).then((result) => {
+        // Sort the posts by date
+        sortedPosts = result.sort((a, b) => {
+          return moment(b.createdAt).valueOf() - moment(a.createdAt).valueOf();
+        });
+        setRelatedPosts(sortedPosts);
+      });
     } else {
-      getRecentPosts(categories, slug).then((result) =>
-        setRelatedPosts(result)
-      );
+      getRecentPosts(categories, slug).then((result) => {
+        // Sort the posts by date
+        sortedPosts = result.sort((a, b) => {
+          return moment(b.createdAt).valueOf() - moment(a.createdAt).valueOf();
+        });
+        setRelatedPosts(sortedPosts);
+      });
     }
   }, [slug]);
   return (

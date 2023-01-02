@@ -28,6 +28,22 @@ const PostDetail = ({ post }) => {
             ))}
           </h3>
         );
+      case "unordered-list":
+        return (
+          <ul key={index} className="mb-4">
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </ul>
+        );
+      case "link":
+        return (
+          <a key={index} href={obj.url}>
+            {modifiedText.map((item, i) => (
+              <React.Fragment key={i}>{item}</React.Fragment>
+            ))}
+          </a>
+        );
       case "paragraph":
         return (
           <p key={index} className="mb-8">
