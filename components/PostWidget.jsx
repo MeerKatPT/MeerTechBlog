@@ -51,8 +51,7 @@ const PostWidget = ({ categories, slug }) => {
               href={`/post/${post.slug}`}
               className="text-md"
               key={post.title}
-            >
-              {post.title}
+            >{post.title}
             </Link>
           </div>
         </div>
