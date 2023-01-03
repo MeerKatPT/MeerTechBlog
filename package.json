@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=13.0"
+    "node": ">=14.0"
   },
   "engineStrict": true,
   "scripts": {
@@ -13,7 +13,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/react": "^18.0.26",
     "graphql": "^15.6.1",
     "graphql-request": "^3.5.0",
     "html-react-parser": "^1.4.0",
