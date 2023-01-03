@@ -21,8 +21,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/api/comments.js",
-    "pages/_app.tsx",
+    "pages/_app.js",
     "ppages/_app.js"
-  ],
+, "pages/index.js"  ],
   "exclude": ["node_modules"]
 }
